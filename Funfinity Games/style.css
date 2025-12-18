@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= General Body ================= */
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; 
+  font-family: "Fredoka One", cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* ================= Interface Page Background ================= */
+.bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("./interface1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(0.9) contrast(1.1);
+  animation: floatBG 20s ease-in-out infinite alternate;
+  transform-origin: center center;
+  z-index: -1;
+}
+
+@keyframes floatBG {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-15px) scale(1.03); } 
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* ================= Sidebar Buttons ================= */
+.sidebar {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 10;
+}
+
+.sidebar button {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  background-image: linear-gradient(to bottom, #d092e0e2, #321836ee);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  transition: 0.3s ease, transform 0.2s ease;
+}
+
+.sidebar button:hover {
+  transform: scale(1.2) rotate(-10deg);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+  filter: brightness(1.2);
+}
+
+/* ================= Menu Section ================= */
+.menu {
+  text-align: center;
+  z-index: 5;
+}
+
+.game-title {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 3.5rem;
+  color: #ffdd00;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+  margin-bottom: 40px;
+}
+
+/* Cards / Menu Buttons */
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.card {
+  padding: 20px 70px;
+  border-radius: 30px;
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+.joy { background-image: linear-gradient(135deg, #ffea00, #ffcc00); }
+.sadness { background-image: linear-gradient(135deg, #00bfff, #1e90ff); }
+.anger { background-image: linear-gradient(135deg, #ff4d4d, #ff1a1a); }
+
+.card:hover {
+  transform: scale(1.1) rotate(-2deg);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+}
+
+/* ================= Quick Game Page ================= */
+body.second-page-background {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("quick\ game.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 20px;
+  color: #fff;
+  overflow-x: hidden; 
+}
+
+/* Content Area */
+.content {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  padding-top: 20px;
+  z-index: 2;
+}
+
+.content h1 {
+  font-size: 3rem;
+  color: #d1bd70;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+}
+
+/* ================= Buttons ================= */
+
+/* Choose Game Button */
+.btn-choose {
+  width: 350px;
+  height: 70px;
+  margin: 30px auto 0 auto; 
+  display: block;
+  text-align: center;
+  line-height: 60px; 
+  border-radius: 30px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  background-image: linear-gradient(135deg, #ffea00, #ffcc00);
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+ margin-bottom: 30px;
+  transition: 0.3s;
+}
+
+.btn-choose:hover {
+  transform: scale(1.1) rotate(-2deg);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+}
+
+/* Back Button */
+.btn {
+  width: 200px;
+  height: 60px;
+  margin: 50px auto 0 auto;
+  display: block;
+  text-align: center;
+  line-height: 60px;
+  border-radius: 30px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  background-image: linear-gradient(135deg, #00bfff, #1e90ff);
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.1) rotate(-2deg);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+}
+
+/* ================= Games Images ================= */
+.games-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 100%;
+}
+
+.games-container img {
+  width: 180px;
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  cursor: pointer;
+  transition: 0.3s;
+  filter: none; 
+}
+
+.games-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
